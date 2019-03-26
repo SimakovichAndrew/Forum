@@ -1,0 +1,21 @@
+﻿@*@model WebForum.Domain.Entities.Comment*@
+@model ForumMVC.Web.Models.TopicsListViewModel
+
+@{
+    ViewBag.Title = "Форум пенсионеров";
+}
+
+<h3>Давайте обсудим тему - @Html.DisplayFor(e => e.CurrentTopic )</h3>
+@foreach (var p in Model.GetTopics)
+{
+    <div class="item">
+        <h3>@p.TopicName</h3>
+        @p.TopicAdmin
+        <h6>@p.DateCreated</h6>
+        <p>@p.Content </p>
+    </div>
+}
+    <div class="pager">
+        @*@Html.PageLinks(Model.GetTopics, x => Url.Action("List", new { page = x }))*@
+        @*@Html.PageLinks(Model.PagingInfoTopic, x => Url.Action("List", new { page = x, category = Model.CurrentTopic}))*@
+    </div>

@@ -1,0 +1,19 @@
+﻿@model ForumMVC.Web.Models.ChatListViewModel
+
+
+<h2> @Html.ViewBag.Greeting @User.Identity.Name</h2>
+
+<h3>Давайте обсудим тему - @ViewBag.SelectTopicName @*@Html.DisplayFor(e => e.CurrentTopicName)*@</h3>
+
+@foreach (var p in Model.GetComments)
+{
+<div class="item">
+    <h3>@p.ComAutor</h3>
+    @p.ComContent
+    <h4>@p.ComTime</h4>
+</div>
+}
+<div class="pager">
+    @*@Html.PageLinks(Model.PagingInfoTopic, x => Url.Action("List", new { page = x }))*@
+    @Html.PageLinks(Model.PagingInfoCom, x => Url.Action("Chat", new { page = x, category = Model.CurrentTopicName }))
+</div>

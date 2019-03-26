@@ -1,0 +1,26 @@
+﻿
+@model IEnumerable<string>
+
+<h2>Темы</h2>
+@*@Html.ActionLink("___________", "List", "Topic")*@
+
+
+
+@foreach (var link in Model)
+{
+    @Html.RouteLink(link, new
+    {
+        controller = "Chat",
+        action = "SelectTopic",
+        topicname = link,
+        page = 1
+    },
+    new { @class = link == ViewBag.SelectTopic ? "selected" : null })
+    <hr>
+}
+@*Символ @ позволяет нам использовать зарезервированные ключевые слова C#, не запутывая
+компилятор. Если мы просто вызовем параметр class (без @), компилятор будет
+считать, что мы определяем новый тип C#. Когда мы будем использовать символ @,
+компилятор поймет, что мы хотим создать параметр в анонимном типе под
+названием class, и мы получим нужный нам результат. Это не тег
+Razor.*@

@@ -1,0 +1,17 @@
+﻿@using ForumMVC.Web
+
+@model ForumMVC.Web.Models.ChatListViewModel
+
+
+
+<div>
+    @Html.Partial("_ViewChat")
+</div>
+<div>
+    @Html.Partial("_Send")
+</div>
+<div class="pager">
+    
+    @*@Html.PageLinks(Model.PagingInfoTopic, x => Url.Action("List", new { page = x }))*@
+    @Html.PageLinks(Model.PagingInfoCom, x => Url.Action("Chat", new { page = x, category = Model.CurrentTopicName }))
+</div>

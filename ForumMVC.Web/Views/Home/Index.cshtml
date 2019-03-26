@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Форум пенсионеров";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">
+        "Форум пенсионеров";
+    </p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Узнайте больше &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Играйте с нами</h2>
+        <p>
+            Футбол футбол футбол игра миллионов
+        </p>
+        <p>
+            @Html.RouteLink("Обсуждаем", new
+    {
+        controller = "Chat",
+        action = "Chat",
+        topicname = "Футбол",
+        page = 1
+    })  &raquo;</a>
+            </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Все для женщин</h2>
+        <p>Доомводство - это искусство</p>
+        <p>
+            @Html.RouteLink("Обсуждаем", new
+    {
+        controller = "Chat",
+        action = "Chat",
+        topicname = "Домоводство",
+        page = 1
+    })&raquo;</a>
+            </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Увлеченным фанатам</h2>
+        <p>Если вы рыбак - это к нам</p>
+        <p>
+            @Html.RouteLink("Обсуждаем", new
+    {
+        controller = "Chat",
+        action = "Chat",
+        topicname = "Рыбалка",
+        page = 1
+    })&raquo;</a>
+            </p>
+    </div>
+</div>
+
+@*@Html.ActionLink("Обсуждаем", "Chat", "Comment")*@

@@ -1,0 +1,18 @@
+﻿@model ForumMVC.Web.Models.ChatListViewModel
+
+<div class="panel-heading">
+    @using (Html.BeginForm("_Send", "Chat", FormMethod.Post))
+    {
+        <input type="hidden" name="returnUrl" value="returnUrl" />
+        @*<input type="hidden" name="ComAutor" value="@Model.Autor" />*@
+        <input type="hidden" name="CurrentTopicName" value="@Model.CurrentTopicName" />
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Оформите Ваши мысли</span>
+            </div>
+            <textarea @*class="form-control"*@ name="Content" aria-label="With textarea" rows="8" cols="25" placeholder="Писать тута"></textarea>
+            @*@Html.EditorFor(x => x.Content)*@
+        </div>
+        <input class="input-group-text" type="submit" value="Отправить" style="border-radius: 5px; background-color:cornflowerblue;" />
+    }
+</div>
