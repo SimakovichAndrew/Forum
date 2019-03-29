@@ -23,7 +23,7 @@ namespace ForumMVC.Web.Controllers
             {
                 case 1: case 2: case 3: case 4: case 5: case 22: case 23:  ViewBag.Greeting = "Доброй ночи"; break;
                 case 6: case 7: case 8: case 9: case 10: ViewBag.Greeting = "Доброе утро"; break;
-                case 11: case 12: case 13: case 14: case 15: case 16: case 17: ViewBag.Greeting = "Доброй день"; break;
+                case 11: case 12: case 13: case 14: case 15: case 16: case 17: ViewBag.Greeting = "Добрый день"; break;
                 case 18: case 19: case 20: case 21: ViewBag.Greeting = "Добрый вечер"; break;
             }
         }
