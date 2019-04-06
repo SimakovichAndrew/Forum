@@ -14,27 +14,70 @@
 </head>
 <body>
     <div id="header">
-        <div class="container">
-            <div class="navbar navbar-inverse navbar-fixed-top" style="max-height: 100px;">
 
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">Форум пенсионеров</a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span><!--Полоски на кнопке-->
+                <span class="icon-bar"></span><!--Полоски на кнопке-->
+                <span class="icon-bar"></span><!--Полоски на кнопке-->
+            </button>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">@Html.ActionLink("Главная", "Index", "Home")</li>
+                    <li class="nav-item">@Html.ActionLink("Условия", "About", "Home")</li>
+                    <li class="nav-item">@Html.ActionLink("Контакт", "Contact", "Home")</li>
+                    <li class="nav-item">
+                        <ul class="navbar-right">
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("Войти", "Login", "Account")</li>
+                                <li>@Html.ActionLink("Регистрация", "Register", "Account")</li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a style="color:lightgray;">@Html.ViewBag.Greeting  @User.Identity.Name</a>
+                                </li>
+                                <li>@Html.ActionLink("Выход", "Logout", "Account")</li>
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+
+
+
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <!-- Название компании и кнопка, которая отображается для мобильных устройств группируются для лучшего отображения при сужении -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span><!--Полоски на кнопке-->
+                        <span class="icon-bar"></span><!--Полоски на кнопке-->
+                        <span class="icon-bar"></span><!--Полоски на кнопке-->
                     </button>
-                    @*@Html.ActionLink("Форум пенсионеров", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                    <a class="navbar-brand" href="#">Форум пенсионеров</a>
                 </div>
-                <div class="navbar-collapse collapse">
+                <!-- Группируем ссылки, формы, выпадающее меню и прочие элементы -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("Главная", "Index", "Home")</li>
                         <li>@Html.ActionLink("Условия", "About", "Home")</li>
                         <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
                     </ul>
-                    <ul class="nav navbar-nav">&nbsp;</ul>
-                    <ul class="nav navbar-nav">
-                        <li style="text-align:left; color:lightgray"><h1>Форум пенсионеров</h1></li>
-                    </ul>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Найти</button>
+                    </form>
                     <ul class="nav navbar-nav navbar-right">
                         @if (!User.Identity.IsAuthenticated)
                         {
@@ -50,28 +93,80 @@
                         }
 
                     </ul>
-                </div>
-            </div>
-        </div>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="clearfix"></div>
     </div>
-    <div>
+                            <div>
+                                <div class="container">
 
-        @*<div class="container body-content">*@
-        <div id="categories">
-            @{ Html.RenderAction("Menu", "Nav"); }
-        </div>
-        <div id="content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - Simakovich ASP.NET Application</p>
-            </footer>
-        </div>
-    </div>
+                                    <div id="header_bottom">
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+                                        <div class="headcol first">
+
+                                            <h2>Добро пожаловать на Форум</h2>
+                                            <div class="textwidget">
+                                                <h4>Поделитесь своим мнением и выпейте кружечку любимого кофе !</h4>
+                                            </div>
+
+                                            <form role="search" method="get" id="bbp-search-form" action="http://dannci.wpmasters.org/wp-forum/forums/search/">
+                                                <div>
+                                                    <label class="screen-reader-text hidden" for="bbp_search">Search for:</label>
+                                                    <input type="hidden" name="action" value="bbp-search-request">
+                                                    <input tabindex="101" type="text" value="" name="bbp_search" id="bbp_search">
+                                                    <input tabindex="102" class="button" type="submit" id="bbp_search_submit" value="Search">
+                                                </div>
+                                            </form>
+
+                                        </div>
+
+                                        <div class="headcol last">
+                                            <dl role="main">
+                                                <dt>Registered Users</dt>
+                                                <dd>
+                                                    <strong>61</strong>
+                                                </dd>
+                                                <dt>Forums</dt>
+                                                <dd>
+                                                    <strong>5</strong>
+                                                </dd>
+                                                <dt>Topics</dt>
+                                                <dd>
+                                                    <strong>23</strong>
+                                                </dd>
+                                                <dt>Replies</dt>
+                                                <dd>
+                                                    <strong>59</strong>
+                                                </dd>
+                                                <dt>Topic Tags</dt>
+                                                <dd>
+                                                    <strong>22</strong>
+                                                </dd>
+                                            </dl>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                                @*<div class="container body-content">*@
+                                <div id="categories">
+                                    @{ Html.RenderAction("Menu", "Nav"); }
+                                </div>
+                                <div id="content">
+                                    @RenderBody()
+                                    <hr />
+                                    <footer>
+                                        <p>&copy; @DateTime.Now.Year - Simakovich ASP.NET Application</p>
+                                    </footer>
+                                </div>
+                            </div>
+
+                            @Scripts.Render("~/bundles/jquery")
+                            @Scripts.Render("~/bundles/bootstrap")
+                            @RenderSection("scripts", required: false)
 </body>
 </html>
 
