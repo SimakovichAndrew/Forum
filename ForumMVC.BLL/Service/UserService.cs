@@ -47,6 +47,14 @@ namespace ForumMVC.BLL.Service
             }
         }
 
+        public UserDTO userDTO()
+        {
+            var com = Database.ClientManager.Find("Boss");
+            return new UserDTO { Id = com.Id, Name = com.Name, UserName = com.ApplicationUser.UserName, Password = com.ApplicationUser.PasswordHash };
+            throw new NotImplementedException();
+        }
+
+
         public async Task<ClaimsIdentity> Authenticate(UserDTO userDto)
         {
             ClaimsIdentity claim = null;
