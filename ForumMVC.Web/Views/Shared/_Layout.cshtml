@@ -8,29 +8,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Форум пенсионеров@*@ViewBag.Title*@</title>
     <!--<link href="~/Content/Site.css" type="text/css" rel="stylesheet" />-->
-    <!--   11   -->       
+    <!--   11   -->
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Script/bootstrap")
 </head>
 <body>
-    <div id="header">
-
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="text-black-50">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
             <a class="navbar-brand" href="#">Форум пенсионеров</a>
-            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+                @* custom-toggler*@
                 <span class="navbar-toggler-icon"></span>
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span><!--Полоски на кнопке-->
-                <span class="icon-bar"></span><!--Полоски на кнопке-->
-                <span class="icon-bar"></span><!--Полоски на кнопке-->
             </button>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">@Html.ActionLink("Главная", "Index", "Home")</li>
-                    <li class="nav-item">@Html.ActionLink("Условия", "About", "Home")</li>
-                    <li class="nav-item">@Html.ActionLink("Контакт", "Contact", "Home")</li>
-                    <li class="nav-item">
-                        <ul class="navbar-right">
+            <div id="collapsingNavbar" class="navbar-collapse collapse">
+            <div>@Html.ActionLink("Главная", "Index", "Home")</div>
+                <ul class="d-flex">
+                    <li class="nav-item active" >@Html.ActionLink("Главная", "Index", "Home")</li>
+                    <li class="nav-item-custom ">@Html.ActionLink("Условия", "About", "Home")</li>
+                    <li class="nav-item ">@Html.ActionLink("Контакт", "Contact", "Home")</li>
+                    <li class="nav-item ml-auto">
+                        <ul class="navbar-right text-white">
                             @if (!User.Identity.IsAuthenticated)
                             {
                                 <li>@Html.ActionLink("Войти", "Login", "Account")</li>
@@ -38,73 +36,26 @@
                             }
                             else
                             {
-                                <li>
-                                    <a style="color:lightgray;">@Html.ViewBag.Greeting  @User.Identity.Name</a>
+                                <li style="color:lightgray;">
+                                    <a>@Html.ViewBag.Greeting  @User.Identity.Name</a>
                                 </li>
                                 <li>@Html.ActionLink("Выход", "Logout", "Account")</li>
                             }
                         </ul>
                     </li>
                 </ul>
-            </div>
-        </nav>
-
-
-
-
-
-        <nav class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <!-- Название компании и кнопка, которая отображается для мобильных устройств группируются для лучшего отображения при сужении -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span><!--Полоски на кнопке-->
-                        <span class="icon-bar"></span><!--Полоски на кнопке-->
-                        <span class="icon-bar"></span><!--Полоски на кнопке-->
-                    </button>
-                    <a class="navbar-brand" href="#">Форум пенсионеров</a>
-                </div>
-                <!-- Группируем ссылки, формы, выпадающее меню и прочие элементы -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Главная", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Условия", "About", "Home")</li>
-                        <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
-                    </ul>
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default">Найти</button>
-                    </form>
-                    <ul class="nav navbar-nav navbar-right">
-                        @if (!User.Identity.IsAuthenticated)
-                        {
-                            <li>@Html.ActionLink("Войти", "Login", "Account")</li>
-                            <li>@Html.ActionLink("Регистрация", "Register", "Account")</li>
-                        }
-                        else
-                        {
-                            <li>
-                                <a style="color:lightgray;">@Html.ViewBag.Greeting  @User.Identity.Name</a>
-                            </li>
-                            <li>@Html.ActionLink("Выход", "Logout", "Account")</li>
-                        }
-
-                    </ul>
-                </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
-        </nav>
+        </nav><!-- /.navbar-collapse -->
+
         <div class="clearfix"></div>
     </div>
-                            <div>
-                                <div class="container">
+
+                                <div class="container bg-primary text-light" >
 
                                     <div id="header_bottom">
 
 
-                                        <div class="headcol first">
+                                        <div class="headcol first text-light">
 
                                             <h2>Добро пожаловать на Форум</h2>
                                             <div class="textwidget">
@@ -122,7 +73,7 @@
 
                                         </div>
 
-                                        <div class="headcol last">
+                                        <div class="headcol last bg-success">
                                             <dl role="main">
                                                 <dt>Registered Users</dt>
                                                 <dd>
@@ -162,7 +113,7 @@
                                         <p>&copy; @DateTime.Now.Year - Simakovich ASP.NET Application</p>
                                     </footer>
                                 </div>
-                            </div>
+
 
                             @Scripts.Render("~/bundles/jquery")
                             @Scripts.Render("~/bundles/bootstrap")
