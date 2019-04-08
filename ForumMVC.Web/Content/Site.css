@@ -1,7 +1,4 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
+﻿
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -27,22 +24,14 @@ textarea {
 BODY {
     font-family: Cambria, Georgia, "Times New Roman";
     margin: 0;
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
 
 DIV#header DIV.title, DIV.item H3, DIV.item H4, DIV.pager A {
     font: bold 1em "Arial Narrow", "Franklin Gothic Medium", Arial;
 }
 
-DIV#header {
-    background-color: #444;
-    border-bottom: 2px solid #111;
-    color: White;
-}
-
-    DIV#header DIV.title {
-        font-size: 2em;
-        padding: .6em;
-    }
 
 DIV#content {
     border-left: 2px solid gray;
@@ -51,125 +40,26 @@ DIV#content {
 }
 
 DIV#categories {
+   
     float: left;
     width: 8em;
     padding: .3em;
 }
 
-DIV.item {
-    border-top: 1px dotted gray;
-    padding-top: .7em;
-    margin-bottom: .7em;
+li a{
+    color: white;
 }
 
-    DIV.item:first-child {
-        border-top: none;
-        padding-top: 0;
-    }
-
-    DIV.item H3 {
-        font-size: 1.3em;
-        margin: 0 0 .25em 0;
-    }
-
-    DIV.item H4 {
-        font-size: 1.1em;
-        margin: .4em 0 0 0;
-    }
-
-DIV.pager {
-    text-align: right;
-    border-top: 2px solid silver;
-    padding: .5em 0 0 0;
-    margin-top: 1em;
+ul { 
+    border: solid black 1px;
 }
 
-    DIV.pager A {
-        font-size: 1.1em;
-        color: #666;
-        text-decoration: none;
-        padding: 0 .4em 0 .4em;
-    }
-
-        DIV.pager A:hover {
-            background-color: Silver;
-        }
-
-        DIV.pager A.selected {
-            background-color: #353535;
-            color: White;
-        }
-
-
-#navbar{
-text-align:justify;
-text-justify:distribute;
-background-color:blue;
-
+.bg{
+    background-image: url('../Content/App_LocalResources/fon.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
-.text-white{
-color: white;
-}
-
-.icon-bar{
-    background-color:azure;
-}
-.nav-item-custom{
-    color:white;
-}
-.custom-toggler.navbar-toggler {
-    border-color: rgb(255,102,203);
-}
-
-.custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
-
-.btn-redbtn:hover {
-    color: #ffffff;
-    background-color: #b92c28;
-    border-color: #bd2130;
-}
-
-.btn-redbtn:focus, .btn-redbtn.focus {
-    box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
-}
-
-.btn-redbtn.disabled, .btn-redbtn:disabled {
-    color: #ffffff;
-    background-color: #dc3545;
-    border-color: #dc3545;
-}
-
-.btn-redbtn:not(:disabled):not(.disabled):active, .btn-redbtn:not(:disabled):not(.disabled).active,
-.show > .btn-redbtn.dropdown-toggle {
-    color: #ffffff;
-    background-color: #bd2130;
-    border-color: #b21f2d;
-}
-
-    .btn-redbtn:not(:disabled):not(.disabled):active:focus, .btn-redbtn:not(:disabled):not(.disabled).active:focus,
-    .show > .btn-redbtn.dropdown-toggle:focus {
-        box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
-    }
-
-
-.bg-redbtn {
-    background-color: #b92c28 !important;
-}
-
-a.bg-primary:hover, a.bg-primary:focus,
-button.bg-primary:hover,
-button.bg-primary:focus {
-    background-color: #0062cc !important;
-}
-
-.bg-secondary {
-    background-color: #6c757d !important;
-}
-
-a.bg-secondary:hover, a.bg-secondary:focus,
-button.bg-secondary:hover,
-button.bg-secondary:focus {
-    background-color: #545b62 !important;
+.navbar{
+    background: transparent !important;
 }
