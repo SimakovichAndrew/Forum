@@ -14,100 +14,91 @@
     @Scripts.Render("~/Script/bootstrap")
 </head>
 <body>
-    <div class="container-fluid bg">
-        <nav id="header"  class="navbar navbar-expand-sm navbar-dark">
-            <div class="row" style="border:solid black 2px">
+    <div class="container-fluid  bg">
+        <nav id="header" class="navbar">
+            <div class="row  navbar-expand-md">
                 <div class="col-sm-1"></div>
-
-                <div class="col-md-3" style="border:solid brown 2px">
+                <div class="col-md-3">
                     <a class="navbar-brand" href="#">Форум пенсионеров</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-                        @* custom-toggler*@
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                </div><!-- /.col-6 -->
-                <div class="col-sm-1">&nbsp;</div>
-                <div class="col-lg-5" style="border:solid white 2px">
-                    <div id="collapsingNavbar" class="navbar-collapse collapse" style="border:solid green 2px">
+                </div><!-- /.col-md-3 -->
+                <div class="col-lg-6" style="border:solid white 2px">
+                    <div id="collapsingNavbar" class="navbar-collapse collapse">
                         <ul class="list-unstyled list-inline d-flex " style="border:solid red 2px">
                             <li class="nav-item active">@Html.ActionLink("Главная", "Index", "Home")</li>
                             <li class="nav-item-custom ">@Html.ActionLink("Условия", "About", "Home")</li>
                             <li class="nav-item ">@Html.ActionLink("Контакт", "Contact", "Home")</li>
                         </ul>
                     </div>
-
-
-
-                </div>
-            </div><!-- /.col-6 -->
-            <div class="col-sm-1">
-                <form role="search" method="get" id="bbp-search-form" action="http://dannci.wpmasters.org/wp-forum/forums/search/">
-                    <div>
-                        <label class="screen-reader-text hidden" for="bbp_search">Search for:</label>
-                        <input type="hidden" name="action" value="bbp-search-request">
-                        <input tabindex="101" type="text" value="" name="bbp_search" id="bbp_search">
-                        <input tabindex="102" class="button" type="submit" id="bbp_search_submit" value="Search">
-                    </div>
-                </form>
-            </div><div class="col-sm-1">
-                <ul>
-                    @if (!User.Identity.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink("Войти", "Login", "Account")</li>
-                        <li>@Html.ActionLink("Регистрация", "Register", "Account")</li>
-                    }
-                    else
-                    {
-                        <li style="color:lightgray;">
-                            <a>@Html.ViewBag.Greeting  @User.Identity.Name</a>
-                        </li>
-                        <li>@Html.ActionLink("Выход", "Logout", "Account")</li>
-                    }
-                </ul>
-            </div><!-- /.row -->
+                </div><!-- /.col-lg-6 -->
+                <div class="col-sm-2">
+                    <ul>
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li>@Html.ActionLink("Войти", "Login", "Account")</li>
+                            <li>@Html.ActionLink("Регистрация", "Register", "Account")</li>
+                        }
+                        else
+                        {
+                            <li style="color:lightgray;">
+                                <a>@Html.ViewBag.Greeting  @User.Identity.Name</a>
+                            </li>
+                            <li>@Html.ActionLink("Выход", "Logout", "Account")</li>
+                        }
+                    </ul>
+                </div><!-- /.col-sm-2 -->
+            </div><!-- row -->
         </nav><!-- /.navbar-collapse -->
+        <div class="clearfix"> <hr></div>
 
-        <div class="clearfix"></div>
-        <div class="bg"  style="background-image: url('../../Content/App_LocalResources/fon.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-            <div id="header_bottom" class="row">
-                <div class="col-sm-1">&nbsp;</div>
-                <div class="col-md-7">
-                    <div class="row"> <h2>Добро пожаловать на Форум</h2></div>
-                    <div class="row">
-                        <div class="textwidget"  style="background-image: url('../../Content/App_LocalResources/fon.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-                            <h4>Поделитесь своим мнением и выпейте кружечку любимого кофе !</h4>
-
-                        </div>
+        <div id="header_bottom" class="row">
+            <div class="col-md-8">
+                <div class="row"> <h2>Добро пожаловать на Форум</h2></div>
+                <div class="row">
+                    <div class="textwidget">
+                        <h4>Поделитесь своим мнением и выпейте кружечку любимого кофе !</h4>
                     </div>
-
+                    <div class="row">
+                        <form role="search" method="get" id="bbp-search-form" action="http://dannci.wpmasters.org/wp-forum/forums/search/">
+                            <div>
+                                <label class="screen-reader-text hidden" for="bbp_search">Search for:</label>
+                                <input type="hidden" name="action" value="bbp-search-request">
+                                <input tabindex="101" type="text" value="" name="bbp_search" id="bbp_search">
+                                <input tabindex="102" class="button" type="submit" id="bbp_search_submit" value="Search">
+                            </div>
+                        </form>
+                    </div><!-- /.col-sm-1 -->
                 </div>
-                <div class="col-md-3 last bg-success">
-                    <dl class="row" role="main">
-                        <dt class="col-md-6">Registered Users</dt>
-                        <dd class="col-md-6">
-                            <strong>61</strong>
-                        <dt class="col-md-6">Forums</dt>
-                        <dd class="col-md-6">
-                            <strong>5</strong>
-                        </dd>
-                        <dt class="col-md-6">Topics</dt>
-                        <dd class="col-md-6">
-                            <strong>23</strong>
-                        </dd>
-                        <dt class="col-md-6">Replies</dt>
-                        <dd>
-                            <strong>59</strong>
-                        </dd>
-                        <dt class="col-md-6">Topic Tags</dt>
-                        <dd class="col-md-6">
-                            <strong>22</strong>
-                        </dd>
-                    </dl>
-                </div>
-                <div class="col-sm-1">&nbsp;</div>
-            </div>
-        </div>
+            </div><!-- /.col-md-8 -->
+            <div class="col-md-3 last bg-primary">
+                <dl class="row" role="main">
+                    <dt class="col-md-6">Registered Users</dt>
+                    <dd class="col-md-6">
+                        <strong>61</strong>
+                    <dt class="col-md-6">Forums</dt>
+                    <dd class="col-md-6">
+                        <strong>5</strong>
+                    </dd>
+                    <dt class="col-md-6">Topics</dt>
+                    <dd class="col-md-6">
+                        <strong>23</strong>
+                    </dd>
+                    <dt class="col-md-6">Replies</dt>
+                    <dd>
+                        <strong>59</strong>
+                    </dd>
+                    <dt class="col-md-6">Topic Tags</dt>
+                    <dd class="col-md-6">
+                        <strong>22</strong>
+                    </dd>
+                </dl>
+            </div><!-- /.col-md-3 -->
+            <div class="col-1">&nbsp;</div>
+        </div><!-- row -->
     </div><!-- /.container-fluid -->
+
     <div class="container-fluid body-content">
         <div id="categories">
             @{ Html.RenderAction("Menu", "Nav"); }

@@ -46,7 +46,7 @@ DIV#categories {
     padding: .3em;
 }
 
-li a{
+.bg li a{
     color: white;
 }
 
@@ -55,11 +55,22 @@ ul {
 }
 
 .bg{
-    background-image: url('../Content/App_LocalResources/fon.jpg');
+    background-image: url('../Content/fon.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    color: white;
 }
-.navbar{
-    background: transparent !important;
+.navbar-brand{
+    color:azure;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.col-md-4 last bg-success {
+    padding-bottom: inherit;
+}
+hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 2;
+    border-top: 2px solid #19a3d0;
 }
